@@ -2,7 +2,7 @@
 ![license](https://img.shields.io/github/license/rpgarde/readme-generator)
 
 ## Description
-This team profile generator takes your inputs via the [inquirer package](https://www.npmjs.com/package/inquirer) and generates a responsive HTML file with details about your team. Check the file called "team-sample.html" for a sample of what the output looks like. 
+This team profile generator takes your inputs via the [inquirer package](https://www.npmjs.com/package/inquirer) and generates a responsive HTML file with details about your team. Check the file called [team-sample.html](./dist/team-sample.html) for a sample of what the output looks like. 
 
 ## Table of Contents 
 * [Technology](#technology)
