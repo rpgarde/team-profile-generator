@@ -4,7 +4,7 @@ const Employee = require('./lib/Employee.js')
 const Manager = require('./lib/Manager.js')
 const Intern = require('./lib/Intern.js')
 const Engineer = require('./lib/Engineer.js')
-const generateHTML = require('./lib/generateHTML.js')
+const generateHTML = require('./src/generateHTML.js')
 
 // create empty array to add responses to
 const emplArr = []
