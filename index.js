@@ -90,7 +90,7 @@ const employeeChoice = () => {
                 internPrompt()
             }
             else {
-                writeToFile("team.html", generateHTML(emplArr))
+                writeToFile("./dist/team.html", generateHTML(emplArr))
             }
         })
 }
@@ -100,8 +100,8 @@ const init = () => {
         .then((data) => {
             let manager = new Manager(data.name, data.id, data.email, data.officeNumber)
             manager.role = manager.getRole()
+            console.log(`Added ${manager.name} to the list of employees\n`)
             emplArr.push(manager)
-            console.log(`Added ${manager} to the list of employees\n`)
             employeeChoice()
         });
 }
@@ -111,8 +111,8 @@ const engineerPrompt = () => {
         .then((data) => {
             let engineer = new Engineer(data.name, data.id, data.email, data.github)
             engineer.role = engineer.getRole()
+            console.log(`Added ${engineer.name} to the list of employees\n`)
             emplArr.push(engineer)
-            console.log(`Added ${engineer} to the list of employees\n`)
             employeeChoice()
         });
 }
@@ -122,8 +122,8 @@ const internPrompt = () => {
         .then((data) => {
             let intern = new Intern(data.name, data.id, data.email, data.school)
             intern.role = intern.getRole()
+            console.log(`Added ${intern.name} to the list of employees\n`)
             emplArr.push(intern)
-            console.log(`Added ${intern} to the list of employees\n`)
             employeeChoice()
         });
 }
