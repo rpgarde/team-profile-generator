@@ -18,6 +18,13 @@ const validator = (input) => {
     }
 }
 
+const numValidator = (input) => {
+    if (isNaN(input)) {
+      return "please enter a number";
+    }
+    return true;
+  }
+
 const allQuestions = [{
     type: "input",
     message: "Please enter name",
@@ -27,13 +34,21 @@ const allQuestions = [{
     type: "input",
     message: "Please enter ID",
     name: "id",
-    validate: validator
+    validate: numValidator
 },
 {
     type: "input",
     message: "Please enter Email",
     name: "email",
-    validate: validator
+            // Regex mail check (return true if valid mail, from stackoverflow)
+    validate: (email) => {
+        if (/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email)) {
+            return true
+        }
+        else {
+            return 'Please enter a valid email'
+        }
+    }
 }
 ];
 
@@ -45,10 +60,10 @@ const internQuestion = {
 }
 
 const managerQuestion = {
-    type: "number",
+    type: "input",
     message: "Please enter manager's office number",
     name: "officeNumber",
-    validate: validator
+    validate: numValidator
 }
 
 const engineerQuestion = {
