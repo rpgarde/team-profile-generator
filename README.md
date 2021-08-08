@@ -40,6 +40,7 @@ I'd love ideas on how to improve this. Email rpgarde@gmail.com if you want to co
 
 ## Tests
 Testing done via Jest. After installing all modules, type below to test.  
+
         npm run test
 
 ## Questions
