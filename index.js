@@ -4,6 +4,7 @@ const Employee = require('./lib/Employee.js')
 const Manager = require('./lib/Manager.js')
 const Intern = require('./lib/Intern.js')
 const Engineer = require('./lib/Engineer.js')
+const generateHTML = require('./lib/generateHTML.js')
 
 // const empl = new Employee('Paolo',10,'rpgarde@gmail.com')
 // const mgr = new Manager('Paolo Garde',10,'rpgarde@gmail.com',4)
@@ -68,7 +69,7 @@ const employeeChoice = () => {
         }
         else{
             console.log("All employees added!")
-            // write file function here
+            writeToFile("team.html",generateHTML(emplArr))
         }
     })
 }
@@ -103,6 +104,17 @@ const internPrompt = () => {
     employeeChoice()
     });
 }
+
+// Write function
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+          throw err;
+        }
+        console.log("File created!");
+      });
+}
+
 
 
 init()
