@@ -30,7 +30,8 @@ Click [HERE](https://drive.google.com/file/d/1e2gUV__L9YDa-F_llevYeDAPJlGCLKZs/v
 2. Type node index in the terminal after navigating to the file
 3. Answer all of the questions
 4. After adding each employee, you have the option to add another employee, or stop adding
-5. Once you finish, a file called team.html will be generated in the dist folder and a confirmation message will pop up in the terminal
+5. If you input the wrong format, you will get an alert and your input will be rejected
+6. Once you finish, a file called team.html will be generated in the dist folder and a confirmation message will pop up in the terminal
 
 ## License
 This project uses MIT license.
