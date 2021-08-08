@@ -77,19 +77,21 @@ const employeeChoice = () => {
 const init = () => {
     inquirer.prompt([...allQuestions,managerQuestion])
     .then((data)=>{
-    let manager = new Manager(data)
-    emplArr.push(data)
+    let manager = new Manager(data.name, data.id, data.email, data.officeNumber)
+    manager.role = manager.getRole()
+    console.log(manager.name)
+    emplArr.push(manager)
     console.log(emplArr)
     employeeChoice()
-    console.log('successful')
     });
 }
 
 const engineerPrompt = () => {
     inquirer.prompt([...allQuestions,engineerQuestion])
     .then((data)=>{
-    let engineer = new Engineer(data)
-    emplArr.push(data)
+    let engineer = new Engineer(data.name, data.id, data.email, data.github)
+    engineer.role = engineer.getRole()
+    emplArr.push(engineer)
     console.log(emplArr)
     employeeChoice()
     });
@@ -98,8 +100,9 @@ const engineerPrompt = () => {
 const internPrompt = () => {
     inquirer.prompt([...allQuestions,internQuestion])
     .then((data)=>{
-    let intern= new Intern(data)
-    emplArr.push(data)
+    let intern= new Intern(data.name, data.id, data.email, data.school)
+    intern.role = intern.getRole()
+    emplArr.push(intern)
     console.log(emplArr)
     employeeChoice()
     });
